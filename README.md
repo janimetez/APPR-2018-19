@@ -1,16 +1,19 @@
 # Analiza podatkov s programom R, 2018/19
 
-Jani Metež
+Avtor: Jani Metež
 
 Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
 * [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/janimetez/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
 * [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/janimetez/APPR-2018-19/master?urlpath=rstudio) RStudio
 
-## Tematika
+## Analiza transporta v Sloveniji
 
-Izbrali si boste temo, s katero se bo vaš projekt ukvarjal.
-Tukaj boste napisali, kje ste dobili podatke, ter kakšen je vaš cilj.
+V svoji projektni nalogi bom analiziral različne načine transporta v Sloveniji. Zanimalo me bo, katero vrsto prevoza potniki najpogosteje uporabljajo. Ogledal si bom tudi število umrlih v prometnih nesrečah v različnih vrstah transporta glede na regijo. Poiskal bom povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. Raziskal bom, koliko ljudje prepotujejo z medkrajevnim linijskim prevozom. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju. Zanimalo me bo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih. 
+
+Viri: https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/01_22211_transport_panoge/01_22211_transport_panoge.asp
+      https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/08_22221_reg_cestna_vozila/08_22221_reg_cestna_vozila.asp
+
 
 ## Program
 
