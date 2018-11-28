@@ -11,8 +11,16 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
 V svoji projektni nalogi bom analiziral različne načine transporta v Sloveniji. Zanimalo me bo, katero vrsto prevoza potniki najpogosteje uporabljajo. Ogledal si bom tudi število umrlih v prometnih nesrečah v različnih vrstah transporta glede na regijo. Poiskal bom povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. Raziskal bom, koliko ljudje prepotujejo z medkrajevnim linijskim prevozom. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju. Zanimalo me bo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih. 
 
-Viri: https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/01_22211_transport_panoge/01_22211_transport_panoge.asp
-      https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/08_22221_reg_cestna_vozila/08_22221_reg_cestna_vozila.asp
+#### Tabele:
+* Tabela 1: leto, vrsta prevoza, število potnikov
+* Tabela 2: leto, regija, število umrlih na 10.000 prebivalcev, povprečna starost avtomobila
+* Tabela 3: leto, prepotovana razdalja v kilometrih, število potnikov
+* Tabela 4: leto, regija, število vozil
+* Tabela 5: leto, število avtomobilov, vrsta pogona 
+
+#### Viri: 
+* https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/01_22211_transport_panoge/01_22211_transport_panoge.asp
+* https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/08_22221_reg_cestna_vozila/08_22221_reg_cestna_vozila.asp
 
 
 ## Program
