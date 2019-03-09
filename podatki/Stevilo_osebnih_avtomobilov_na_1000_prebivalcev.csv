@@ -1,0 +1,34 @@
+"Nekateri kazalniki transporta po: KAZALNIK, STATISTIÈNA REGIJA , LETO"
+
+" ";" ";"2001";"2002";"2003";"2004";"2005";"2006";"2007";"2008";"2009";"2010";"2011";"2012";"2013";"2014";"2015";"2016";"2017"
+"Število osebnih avtomobilov na 1.000 prebivalcev"
+" ";"Pomurska";393;398;407;419;432;442;457;478;484;490;496;501;504;509;513;524;538
+" ";"Podravska";416;420;429;440;452;462;476;489;494;494;496;497;496;500;508;517;526
+" ";"Koroška";406;412;421;431;445;455;467;488;490;494;500;503;507;511;513;523;532
+" ";"Savinjska";416;422;431;444;458;467;481;502;506;510;513;513;512;515;515;523;534
+" ";"Zasavska";386;392;398;410;422;430;445;463;468;469;468;470;469;472;482;491;501
+" ";"Spodnjeposavska";420;426;436;452;465;475;489;510;518;521;525;525;529;533;536;548;560
+" ";"Jugovzhodna Slovenija";421;427;436;450;464;470;483;502;506;510;515;517;517;523;527;537;551
+" ";"Osrednjeslovenska";475;483;489;498;508;514;527;529;528;524;521;516;510;508;517;522;530
+" ";"Gorenjska";442;449;458;470;479;486;498;512;517;518;518;517;516;518;521;529;539
+" ";"Notranjsko-kraška";452;461;469;482;496;506;518;537;542;545;550;555;553;555;558;569;581
+" ";"Goriška";499;506;513;522;536;545;556;577;581;580;580;577;577;579;580;589;600
+" ";"Obalno-kraška";511;515;519;531;541;549;558;570;569;569;568;563;558;559;561;567;576
+
+"Vir: Statistièni urad Republike Slovenije."
+
+"Povezane vsebine: "
+"- (seznam "
+"HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatotek-"
+"e=7794 target=_blank) Metodološka pojasnila"
+
+"Podatki so teritorialno razvršèeni po Klasifikaciji statistiènih "
+"teritorialnih enot v Evropski uniji (The Classification  of "
+"Territorial Units for Statistics) – NUTS ((seznam "
+"HREF=../database/Meta/Klas/NUTS.htm TARGET=_blank) opis in "
+"pojasnila), raven NUTS 3.Opombe o spremembah posameznih regij so "
+"zapisane k vsaki spremenjeni regiji in so ob izpisu tabele na zaslon "
+"dostopne s klikom na ikono za opombe (zvezdica). V opombah je na "
+"zaèetku naveden datum, s katerim je opisana teritorialna sprememba "
+"upoštevana pri teritorialnem razvršèanju enot za statistiène namene."
+

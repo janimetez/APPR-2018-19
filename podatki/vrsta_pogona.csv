@@ -1,0 +1,75 @@
+"Osebni avtomobili, avtobusi in tovorna vozila ter prve registracije teh"
+"vozil glede na pogon in gorivo po: VRSTA VOZILA, LETO, VRSTA POGONA IN"
+"GORIVA , MERITVE"
+
+" ";" ";" ";"Število vseh vozil na dan 31. 12."
+"Osebni avtomobili in specialni avtomobili"
+" ";"2014"
+" ";" ";"Vrsta pogona in goriva - SKUPAJ";1076962
+" ";" ";"Elektrièni pogon";133
+" ";" ";"Bencin";610831
+" ";" ";"Dizel, biodizel in komb., nafta, plinsko olje";457341
+" ";" ";"Utekoèinjen naftni plin (LPG) in komb. z bencinom in dizlom";7367
+" ";" ";"Stisnjen zemeljski plin (CNG) in komb. z bencinom";106
+" ";" ";"Hibridni pogon";1107
+" ";" ";"Drugo";77
+" ";"2015"
+" ";" ";"Vrsta pogona in goriva - SKUPAJ";1087686
+" ";" ";"Elektrièni pogon";288
+" ";" ";"Bencin";596203
+" ";" ";"Dizel, biodizel in komb., nafta, plinsko olje";480974
+" ";" ";"Utekoèinjen naftni plin (LPG) in komb. z bencinom in dizlom";8635
+" ";" ";"Stisnjen zemeljski plin (CNG) in komb. z bencinom";149
+" ";" ";"Hibridni pogon";1363
+" ";" ";"Drugo";74
+" ";"2016"
+" ";" ";"Vrsta pogona in goriva - SKUPAJ";1106116
+" ";" ";"Elektrièni pogon";457
+" ";" ";"Bencin";585369
+" ";" ";"Dizel, biodizel in komb., nafta, plinsko olje";508663
+" ";" ";"Utekoèinjen naftni plin (LPG) in komb. z bencinom in dizlom";9468
+" ";" ";"Stisnjen zemeljski plin (CNG) in komb. z bencinom";163
+" ";" ";"Hibridni pogon";1913
+" ";" ";"Drugo";83
+" ";"2017"
+" ";" ";"Vrsta pogona in goriva - SKUPAJ";1128214
+" ";" ";"Elektrièni pogon";780
+" ";" ";"Bencin";576405
+" ";" ";"Dizel, biodizel in komb., nafta, plinsko olje";537680
+" ";" ";"Utekoèinjen naftni plin (LPG) in komb. z bencinom in dizlom";9999
+" ";" ";"Stisnjen zemeljski plin (CNG) in komb. z bencinom";225
+" ";" ";"Hibridni pogon";3042
+" ";" ";"Drugo";83
+
+"Vir: Ministrstvo za infrastrukturo in prostor, Statistièni urad "
+"Republike Slovenije "
+" "
+"PRELOMI V ÈASOVNI VRSTI PODATKOV IN IZSTOPAJOÈE VREDNOSTI "
+" "
+"Za naslednje kategorije so podatki prikazovani in vkljuèeni v "
+"agregate: "
+"- motorji od leta 1992, "
+"- traktorji od leta 1994, "
+"- motorna kolesa od marca 2002. "
+" "
+"Pomembnejši prelomi in izstopajoèe vrednosti "
+"- Uvedba davka na dodano vrednost v letu 1999. "
+"- Obvezna registracija koles z motorjem od aprila 2002. "
+"- Registriranje starih neprijavljenih traktorjev v letu 2005. "
+"- Prelom v seriji pri tovornih prikolicah zaradi spremenjene "
+"kategorizacije vozil v letu 2006. "
+"- Prelom v seriji pri traktorjih, traktorskih prikolicah in bivalnih "
+"prikolicah konec leta 2007 zaradi izloèitve neaktivnih vozil. "
+"- Prelom v seriji pri motorjih konec leta 2007 zaradi neodjavljanja "
+"motorjev èez zimo. "
+" "
+"Veè o prelomih v serijah v metodoloških pojasnilih. "
+" "
+"Kjer ni posebej navedeno, gre za pogon z notranjim izgorevanjem."
+
+"Povezane vsebine: "
+"- (seznam "
+"HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatotek-"
+"e=8193 target=_blank) Metodološka pojasnila "
+" "
+

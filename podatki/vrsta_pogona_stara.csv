@@ -1,0 +1,171 @@
+"Osebni avtomobili, avtobusi in tovorna vozila in prve registracije teh"
+"vozil po: VRSTA VOZILA, LETO, GORIVO , MERITVE"
+
+" ";" ";" ";"Število vseh vozil na dan 31. 12."
+"Osebni avtomobili in specialni osebni avtomobili"
+" ";"1992"
+" ";" ";"Vrsta goriva - SKUPAJ";608147
+" ";" ";"Bencin";555451
+" ";" ";"Dizel, nafta, plinsko olje";50475
+" ";" ";"Plin";320
+" ";" ";"Ostalo";1901
+" ";"1993"
+" ";" ";"Vrsta goriva - SKUPAJ";652338
+" ";" ";"Bencin";595840
+" ";" ";"Dizel, nafta, plinsko olje";54471
+" ";" ";"Plin";324
+" ";" ";"Ostalo";1703
+" ";"1994"
+" ";" ";"Vrsta goriva - SKUPAJ";670301
+" ";" ";"Bencin";609842
+" ";" ";"Dizel, nafta, plinsko olje";58740
+" ";" ";"Plin";288
+" ";" ";"Ostalo";1431
+" ";"1995"
+" ";" ";"Vrsta goriva - SKUPAJ";713421
+" ";" ";"Bencin";649197
+" ";" ";"Dizel, nafta, plinsko olje";62670
+" ";" ";"Plin";300
+" ";" ";"Ostalo";1254
+" ";"1996"
+" ";" ";"Vrsta goriva - SKUPAJ";745158
+" ";" ";"Bencin";677119
+" ";" ";"Dizel, nafta, plinsko olje";66765
+" ";" ";"Plin";292
+" ";" ";"Ostalo";982
+" ";"1997"
+" ";" ";"Vrsta goriva - SKUPAJ";778963
+" ";" ";"Bencin";705816
+" ";" ";"Dizel, nafta, plinsko olje";72027
+" ";" ";"Plin";349
+" ";" ";"Ostalo";771
+" ";"1998"
+" ";" ";"Vrsta goriva - SKUPAJ";813868
+" ";" ";"Bencin";734594
+" ";" ";"Dizel, nafta, plinsko olje";78278
+" ";" ";"Plin";443
+" ";" ";"Ostalo";553
+" ";"1999"
+" ";" ";"Vrsta goriva - SKUPAJ";848324
+" ";" ";"Bencin";762253
+" ";" ";"Dizel, nafta, plinsko olje";85012
+" ";" ";"Plin";717
+" ";" ";"Ostalo";342
+" ";"2000"
+" ";" ";"Vrsta goriva - SKUPAJ";868905
+" ";" ";"Bencin";778438
+" ";" ";"Dizel, nafta, plinsko olje";89379
+" ";" ";"Plin";861
+" ";" ";"Ostalo";227
+" ";"2001"
+" ";" ";"Vrsta goriva - SKUPAJ";884679
+" ";" ";"Bencin";785715
+" ";" ";"Dizel, nafta, plinsko olje";97756
+" ";" ";"Plin";1062
+" ";" ";"Ostalo";146
+" ";"2002"
+" ";" ";"Vrsta goriva - SKUPAJ";898482
+" ";" ";"Bencin";781461
+" ";" ";"Dizel, nafta, plinsko olje";115586
+" ";" ";"Plin";1333
+" ";" ";"Ostalo";102
+" ";"2003"
+" ";" ";"Vrsta goriva - SKUPAJ";914461
+" ";" ";"Bencin";771448
+" ";" ";"Dizel, nafta, plinsko olje";141055
+" ";" ";"Plin";1886
+" ";" ";"Ostalo";72
+" ";"2004"
+" ";" ";"Vrsta goriva - SKUPAJ";938166
+" ";" ";"Bencin";760583
+" ";" ";"Dizel, nafta, plinsko olje";175442
+" ";" ";"Plin";2088
+" ";" ";"Ostalo";53
+" ";"2005"
+" ";" ";"Vrsta goriva - SKUPAJ";964781
+" ";" ";"Bencin";754801
+" ";" ";"Dizel, nafta, plinsko olje";207929
+" ";" ";"Plin";2019
+" ";" ";"Ostalo";32
+" ";"2006"
+" ";" ";"Vrsta goriva - SKUPAJ";985567
+" ";" ";"Bencin";742620
+" ";" ";"Dizel, nafta, plinsko olje";240758
+" ";" ";"Plin";2157
+" ";" ";"Ostalo";32
+" ";"2007"
+" ";" ";"Vrsta goriva - SKUPAJ";1020127
+" ";" ";"Bencin";736125
+" ";" ";"Dizel, nafta, plinsko olje";281665
+" ";" ";"Plin";2300
+" ";" ";"Ostalo";37
+" ";"2008"
+" ";" ";"Vrsta goriva - SKUPAJ";1051836
+" ";" ";"Bencin";731764
+" ";" ";"Dizel, nafta, plinsko olje";317562
+" ";" ";"Plin";2439
+" ";" ";"Ostalo";71
+" ";"2009"
+" ";" ";"Vrsta goriva - SKUPAJ";1065927
+" ";" ";"Bencin";715034
+" ";" ";"Dizel, nafta, plinsko olje";349219
+" ";" ";"Plin";1616
+" ";" ";"Ostalo";58
+" ";"2010"
+" ";" ";"Vrsta goriva - SKUPAJ";1068924
+" ";" ";"Bencin";695034
+" ";" ";"Dizel, nafta, plinsko olje";372839
+" ";" ";"Plin";1000
+" ";" ";"Ostalo";51
+" ";"2011"
+" ";" ";"Vrsta goriva - SKUPAJ";1074109
+" ";" ";"Bencin";678885
+" ";" ";"Dizel, nafta, plinsko olje";394263
+" ";" ";"Plin";914
+" ";" ";"Ostalo";47
+" ";"2012"
+" ";" ";"Vrsta goriva - SKUPAJ";1073967
+" ";" ";"Bencin";656964
+" ";" ";"Dizel, nafta, plinsko olje";416098
+" ";" ";"Plin";846
+" ";" ";"Ostalo";59
+" ";"2013"
+" ";" ";"Vrsta goriva - SKUPAJ";1071922
+" ";" ";"Bencin";635412
+" ";" ";"Dizel, nafta, plinsko olje";435648
+" ";" ";"Plin";795
+" ";" ";"Ostalo";67
+
+"Vir: Ministrstvo za infrastrukturo in prostor, Statistièni urad "
+"Republike Slovenije "
+" "
+"Podatki se od leta 2013 dalje zaradi spremembe metodologije ne bodo "
+"veè osveževali.  "
+" "
+"PRELOMI V ÈASOVNI VRSTI PODATKOV IN IZSTOPAJOÈE VREDNOSTI "
+" "
+"Za naslednje kategorije so podatki prikazovani in vkljuèeni v "
+"agregate: "
+"- motorji od leta 1992, "
+"- traktorji od leta 1994, "
+"- motorna kolesa od marca 2002. "
+" "
+"Pomembnejši prelomi in izstopajoèe vrednosti "
+"- Uvedba davka na dodano vrednost v letu 1999. "
+"- Obvezna registracija koles z motorjem od aprila 2002. "
+"- Registriranje starih neprijavljenih traktorjev v letu 2005. "
+"- Prelom v seriji pri tovornih prikolicah zaradi spremenjene "
+"kategorizacije vozil v letu 2006. "
+"- Prelom v seriji pri traktorjih, traktorskih prikolicah in bivalnih "
+"prikolicah konec leta 2007 zaradi izloèitve neaktivnih vozil. "
+"- Prelom v seriji pri motorjih konec leta 2007 zaradi neodjavljanja "
+"motorjev èez zimo. "
+" "
+"Veè o prelomih v serijah v metodoloških pojasnilih. "
+
+"Povezane vsebine: "
+"- (seznam "
+"HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatotek-"
+"e=8193 target=_blank) Metodološka pojasnila "
+" "
+

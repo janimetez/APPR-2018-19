@@ -1,0 +1,79 @@
+"Prebivalstvo po: SPOL, STATISTIÈNA REGIJA , LETO"
+
+" ";" ";"2001";"2002";"2003";"2004";"2005";"2006";"2007";"2008";"2009";"2010";"2011";"2012";"2013";"2014";"2015";"2016";"2017"
+"Spol - SKUPAJ"
+" ";"Pomurska";124329;123948;123550;123073;122717;122453;122068;121824;119537;119548;119145;118988;118022;117133;116670;116078;115477
+" ";"Podravska";319717;320078;319804;319426;319114;319235;319706;321781;322900;323343;323119;323534;323238;323328;323356;322553;322043
+" ";"Koroška";74075;74027;73901;73860;73839;73754;73619;73714;72481;72812;72494;72364;72100;71546;71303;71040;70761
+" ";"Savinjska";256407;256871;256968;256810;256752;257375;258480;261243;258845;260025;259726;260253;260217;259853;253975;254318;254761
+" ";"Zasavska";46201;46123;45919;45762;45547;45356;45229;45226;44750;44706;44222;43926;43502;42983;57711;57404;57280
+" ";"Posavska";69702;69814;69895;70055;69826;69899;70058;70353;69900;70192;70167;70164;70211;69958;75619;75711;75544
+" ";"Jugovzhodna Slovenija";138098;138380;138644;138848;139095;139747;140258;141547;141166;142092;142483;142680;142509;142405;142373;142566;142711
+" ";"Osrednjeslovenska";490148;492117;493432;495101;496675;500021;503935;508607;521965;529646;533213;536484;541718;546314;534518;537023;539672
+" ";"Gorenjska";196701;197277;197648;197834;198342;199085;199902;201254;201779;202903;203427;204057;203984;203894;203850;203838;203800
+" ";"Primorsko-notranjska";50585;50760;50775;50913;51032;51173;51483;52083;51728;52217;52287;52387;52382;52449;52538;52523;52582
+" ";"Goriška";120314;120413;119938;119742;119622;119628;119477;120329;118533;119080;119146;119236;119002;118374;118188;118064;117747
+" ";"Obalno-kraška";103817;104218;104559;105009;105029;105632;106162;107905;108778;110412;110760;111423;111936;112848;112773;113070;113517
+
+"Od objave podatkov o prebivalstvu Slovenije po 1. 1. 2008 uporabljamo "
+"na Statistiènem uradu Republike Slovenije (seznam "
+"HREF=http://www.stat.si/StatWeb/glavnanavigacija/podatki/prikazistaro-"
+"novico?IdNovice=2319 TARGET=_blank) spremenjeno statistièno "
+"definicijo prebivalstva. To pomeni prelom v èasovni vrsti podatkov, "
+"zato podatki po tej definiciji, torej podatki od leta 2009 dalje, "
+"niso neposredno primerljivi s podatki za predhodna leta. "
+" "
+"Viri: Statistièni urad Republike Slovenije, Ministrstvo za notranje "
+"zadeve - Centralni register prebivalstva, Ministrstvo za notranje "
+"zadeve - Direktorat za upravne notranje zadeve."
+
+"Povezane vsebine: "
+"- (seznam HREF=http://www.stat.si/StatWeb/File/DocSysFile/7808 "
+"target=_blank) Metodološka pojasnila "
+
+"Podatki so teritorialno razvršèeni po uredbi o Standardni "
+"klasifikaciji teritorialnih enot ((seznam "
+"HREF=../database/Meta/Klas/SKTE.htm TARGET=_blank) opis in "
+"pojasnila), raven SKTE 3. "
+"Opombe o spremembah posameznih regij so zapisane k vsaki spremenjeni "
+"regiji in so ob izpisu tabele na zaslon dostopne s klikom na ikono za "
+"opombe (zvezdica). V opombah je na zaèetku naveden datum, s katerim "
+"je opisana teritorialna sprememba upoštevana pri teritorialnem "
+"razvršèanju enot za statistiène namene.  "
+" "
+
+"15.01.2005: Zaradi sprememb meja naselij (Marija Reka in Knezdol) in "
+"obèin (Prebold in Trbovlje) sta se posledièno spremenili meji med "
+"savinjsko in zasavsko statistièno regijo. Savinjska statistièna "
+"regija se je zmanjšala za 0,2 km2; za prav toliko se je poveèala "
+"zasavska statistièna regija.  "
+" "
+
+"15.01.2005: Zaradi sprememb meja naselij (Marija Reka in Knezdol) in "
+"obèin (Prebold in Trbovlje) sta se posledièno spremenili meji med "
+"savinjsko in zasavsko statistièno regijo. Savinjska statistièna "
+"regija se je zmanjšala za 0,2 km2; za prav toliko se je poveèala "
+"zasavska statistièna regija.  "
+" "
+
+"30. 3. 2000 je bil po Uredbi o SKTE iz dotedanje osrednjeslovenske "
+"statistiène regije izloèen njen južni del (obèine Koèevje, Kostel, "
+"Loški Potok, Osilnica, Ribnica, Sodražica) in pripojen k dotedanji "
+"dolenjski statistièni regiji; ta se je zato poveèala (za  985 km2 ) "
+"in je dobila novo ime – jugovzhodna Slovenija "
+" Uradni list št. 28/00. "
+
+"30. 3. 2000 je bil po Uredbi o SKTE iz dotedanje osrednjeslovenske "
+"statistiène regije izloèen njen južni del (obèine Koèevje, Kostel, "
+"Loški Potok, Osilnica, Ribnica, Sodražica) in pripojen k dotedanji "
+"dolenjski statistièni regiji; ta se je zato poveèala (za  985 km2 ) "
+"in je dobila novo ime – jugovzhodna Slovenija "
+" Uradni list št. 28/00. "
+
+"Stanje na 1.1. "
+
+"Podatke o prebivalstvu za stanje 1. 1. 2011 smo v Sloveniji "
+"pripravili tudi v skladu z Uredbo (ES) št. 763/2008 Evropskega "
+"parlamenta in Sveta z dne 9. julija 2008 o popisih prebivalstva in "
+"stanovanj (Uradni list Evropske unije L 218/14, 13. avgust 2008)."
+

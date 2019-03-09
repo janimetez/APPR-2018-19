@@ -1,0 +1,52 @@
+"Potniški prevoz in promet po: MERITVE, VRSTA PREVOZA/PROMETA , LETO"
+
+" ";" ";"2001";"2002";"2003";"2004";"2005";"2006";"2007";"2008";"2009";"2010";"2011";"2012";"2013";"2014";"2015";"2016";"2017"
+"Potniki (1000)"
+" ";"Cestni javni linijski prevoz";72504;57955;54538;43084;39759;37964;38532;38751;36720;28552;25359;24793;25146;26708;27735;30287;31903
+" ";"Cestni mestni javni linijski prevoz";105599;103938;98373;100418;55937;53604;51745;51336;47748;47210;45980;42760;47752;47549;46321;51986;61776
+" ";"Cestni prevoz z osebnimi avtomobili";...;...;...;...;...;...;...;...;...;...;...;...;...;...;...;...;...
+" ";"Cestni prevoz z avtobusi";...;...;...;...;...;...;...;...;...;...;...;...;...;...;...;...;...
+" ";"Železniški prevoz";14484;14519;15066;14835;15742;16131;16123;16661;16355;16220;15744;15512;16420;14837;14558;14008;13422
+" ";"Zraèni prevoz";801;814;864;885;944;1018;1136;1302;1144;1170;1163;988;1027;1113;1284;1452;1210
+" ";"Letališki promet";886;866;925;1046;1227;1338;1536;1666;1435;1402;1362;1171;1279;1320;1459;1411;1686
+" ";"Pristaniški promet";34;42;47;42;35;30;51;50;78;71;133;99;96;87;95;109;108
+
+"Vir: Statistièni urad Republike Slovenije. "
+" "
+
+"Povezane vsebine: "
+"- (seznam "
+"HREF=http://www.stat.si/StatWeb/Common/PrikaziDokument.ashx?IdDatotek-"
+"e=7794 target=_blank) Metodološka pojasnila "
+" "
+
+"Vkljuèen javni linijski medkrajevni in mednarodni avtobusni prevoz. "
+"Zaradi sprememb v naèinu izvajanja raziskovanja in prehoda nekaterih "
+"podjetij na elektronsko evidentiranje prepeljanih potnikov, podatki "
+"od leta 2010 dalje niso popolnoma primerljivi s podatki za predhodna "
+"obdobja."
+
+"Vkljuèen avtobusni prevoz znotraj mestnih obmoèij."
+
+"Vkljuèen prevoz z osebnimi vozili po ozemlju Slovenije ne glede na "
+"državo registracije vozila. (Vir: Direkcija Republike Slovenije za "
+"infrastrukturo)"
+
+"Vkljuèen avtobusni prevoz po ozemlju Slovenije ne glede na državo "
+"registracije vozila. (Vir: Direkcija Republike Slovenije za "
+"infrastrukturo)"
+
+"Vkljuèen prevoz z vlaki na ozemlju Slovenije."
+
+"Vkljuèen prevoz slovenskega letalskega prevoznika v mednarodnem "
+"prevozu, iz tujine, v tujino in po tujini."
+
+"Vkljuèeni potniki, ki so z letali v javnem prevozu prišli na tri "
+"slovenska mednarodna letališèa in z njih odšli."
+
+"Vkljuèeni potniki, ki so z ladjami pripluli v tri slovenska "
+"pristanišèa in potniki, ki so iz njih odpluli. Izjema so potniki na "
+"potniških ladjah za križarjenje, ki se za kratek èas izkrcajo v "
+"pristanišèu pristanka (npr. obisk turistiènih znamenitosti), ti so "
+"zajeti samo ob izkrcanju v pristanišèe."
+
