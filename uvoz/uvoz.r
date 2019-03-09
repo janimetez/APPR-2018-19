@@ -32,19 +32,6 @@ uvozi.obcine <- function() {
   return(tabela)
 }
 
-# Funkcija, ki uvozi podatke iz datoteke druzine.csv
-uvozi.druzine <- function(obcine) {
-  data <- read_csv2("podatki/druzine.csv", col_names=c("obcina", 1:4),
-                    locale=locale(encoding="Windows-1250"))
-  data$obcina <- data$obcina %>% strapplyc("^([^/]*)") %>% unlist() %>%
-    strapplyc("([^ ]+)") %>% sapply(paste, collapse=" ") %>% unlist()
-  data$obcina[data$obcina == "Sveti Jurij"] <- "Sveti Jurij ob Ščavnici"
-  data <- data %>% melt(id.vars="obcina", variable.name="velikost.druzine",
-                        value.name="stevilo.druzin")
-  data$velikost.druzine <- parse_number(data$velikost.druzine)
-  data$obcina <- factor(data$obcina, levels=obcine)
-  return(data)
-}
 
 
 #POTNIŠKI PROMET
@@ -59,28 +46,6 @@ tabela1 <- melt(tabela1, id.vars = "Vrsta_prevoza", measure.vars = names(tabela1
                     na.rm = TRUE)
 
 
-
-# ŠTEVILO UMRLIH V PROMETNIH NESREČAH
-tabela2.1 <- read_csv2("podatki/stevilo_umrlih_v_prometnih_nesrecah.csv", col_names = c("Število umrlih v cestnoprometnih nesrečah na 10.000 prebivalcev", "Regija", 2001:2017),
-                     skip = 5, n_max = 12,
-                     locale = locale(encoding = "Windows-1250"))
-
-tabela2.1 <- tabela2.1[,-1]
-tabela2.1 <- melt(tabela2.1, id.vars = "Regija", measure.vars = names(tabela2.1)[-1],
-                  variable.name = "Leto", value.name = "Stevilo",
-                  na.rm = TRUE)
-
-tabela2.2 <- read_csv2("podatki/stevilo_umrlih_v_prometnih_nesrecah.csv", col_names = c("Povprečna starost osebnih avtomobilov","Regija", 2001:2017),
-                       skip = 19, n_max = 12,
-                       locale = locale(encoding = "Windows-1250"))
-tabela2.2 <- tabela2.2[,-1]
-
-tabela2.2[,-1] <- apply(tabela2.2[-1], 2, function(x) {x/10})
-
-tabela2.2 <- melt(tabela2.2, id.vars = "Regija", measure.vars = names(tabela2.2)[-1],
-                    variable.name = "Leto", value.name = "Starost_avtomobila",
-                    na.rm=TRUE)
-
 #ŠTEVILO POTNIKOV V LINIJSKEM PROMETU
 tabela3 <- read_csv2("podatki/cestni_javni_linijski_promet.csv", 
                      col_names = c("Potniki","Cestni javni linijski promet", "Razdalja", 2010:2017),
@@ -91,13 +56,6 @@ tabela3 <- tabela3[-c(1,2)]
 tabela3 <- melt(tabela3,id.vars = "Razdalja", measure.vars = names(tabela3)[-1],
                   variable.name = "Leto", value.name = "Potniki")
 
-#ŠTEVILO VOZIL PO REGIJAH
-tabela4 <- read_csv2("podatki/2222104Ss.csv", col_names = c("Vrsta vozila", "Regija", 1992:2017),
-                     skip = 6, n_max = 12, na = "...",
-                     locale = locale(encoding = "Windows-1250"))
-tabela4 <- tabela4[-1]
-tabela4 <- melt(tabela4, id.vars = "Regija", measure.vars = names(tabela4)[-1],
-                  variable.name = "Leto", value.name = "Stevilo_vozil")
 
 
 #VRSTA POGONA
@@ -116,10 +74,6 @@ tabela6 <- tabela6[c(3,2,4)] %>% fill(2)
 
 tabela6 <- tabela6[-c(1,10,19,28,37),]
 
-tabela6 <- tabela6[-9,]
-tabela6 <- tabela6[-17,]
-tabela6 <- tabela6[-25,]
-tabela6 <- tabela6[-32,]
 
 #####################################################################################################
 
