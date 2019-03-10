@@ -34,58 +34,37 @@ uvozi.obcine <- function() {
 
 
 
-#POTNIŠKI PROMET
-# TABELA 1
-tabela1 <- read_csv2("podatki/potniski_promet.csv", col_names = c("Potniki(1000)", "Vrsta_prevoza", 2001:2017),
+# POTNIŠKI PROMET IN PREVOZ
+promet <- read_csv2("podatki/potniski_promet.csv", col_names = c("Potniki(1000)", "Vrsta_prevoza", 2001:2017),
                     skip = 4, n_max = 8, na = "...",
                     locale=locale(encoding="Windows-1250"))
-tabela1 <- tabela1[,-1]
+promet <- promet[,-1]
 
-tabela1 <- melt(tabela1, id.vars = "Vrsta_prevoza", measure.vars = names(tabela1)[-1],
+promet <- melt(promet, id.vars = "Vrsta_prevoza", measure.vars = names(promet)[-1],
                     variable.name = "Leto", value.name = "Stevilo",
                     na.rm = TRUE)
 
 
-#ŠTEVILO POTNIKOV V LINIJSKEM PROMETU
-tabela3 <- read_csv2("podatki/cestni_javni_linijski_promet.csv", 
-                     col_names = c("Potniki","Cestni javni linijski promet", "Razdalja", 2010:2017),
-                     skip = 7, n_max = 5,
-                     locale = locale(encoding = "Windows-1250"))
-tabela3 <- tabela3[-c(1,2)]
+# ŠTEVILO AVTOMOBILOV GLEDE NA VRSTO POGONA 
 
-tabela3 <- melt(tabela3,id.vars = "Razdalja", measure.vars = names(tabela3)[-1],
-                  variable.name = "Leto", value.name = "Potniki")
-
-
-
-#VRSTA POGONA
-tabela5 <- read_csv2("podatki/vrsta_pogona_stara.csv", col_names = c("Osebni avtomobili","Leto", "Vrsta_pogona", "Stevilo_avtomobilov"),
-                     skip = 5, n_max=132,
-                     locale = locale(encoding = "Windows-1250"))
-tabela5 <- tabela5[c(3,2,4)] %>% fill(2)
-
-
-
-
-tabela6 <- read_csv2("podatki/vrsta_pogona.csv", col_names = c("Osebni avtomobili","Leto", "Vrsta_pogona", "Stevilo_avtomobilov"),
+pogon <- read_csv2("podatki/vrsta_pogona.csv", col_names = c("Osebni avtomobili","Leto", "Vrsta_pogona", "Stevilo_avtomobilov"),
                      skip = 6, n_max=36,
                      locale = locale(encoding = "Windows-1250"))
-tabela6 <- tabela6[c(3,2,4)] %>% fill(2)
+pogon <- pogon[c(3,2,4)] %>% fill(2)
 
-tabela6 <- tabela6[-c(1,10,19,28,37),]
+pogon <- filter(pogon, Vrsta_pogona !='NA')
 
 
-#####################################################################################################
+indeksi <- dcast(pogon, Vrsta_pogona~Leto, value.var = 'Stevilo_avtomobilov' )
+colnames(indeksi) <- c("Vrsta_pogona", "a", "b", "c", "d")
+indeksi <- transform(indeksi, Indeks1 = (b-a)*100/a)
+indeksi <- transform(indeksi, Indeks2 = (c-b)*100/b)
+indeksi <- transform(indeksi, Indeks3 = (d-c)*100/c)
+indeksi <- indeksi[c(1,6,7,8)] 
+colnames(indeksi) <- c("Vrsta_pogona", 2015:2017)
 
-#PREBIVALSTVO PO REGIJAH 
-
-prebivalstvo <- read_csv2("podatki/prebivalstvo_po_regijah.csv", col_names = c("spol","Regija", 2001:2017),
-                          skip=4, n_max=12, locale = locale(encoding = "Windows-1250"))
-prebivalstvo <- prebivalstvo[,-1]
-prebivalstvo$Regija <- gsub("Jugovzhodna Slovenija", "Jugovzhodna", prebivalstvo$Regija)
-
-prebivalstvo <- melt(prebivalstvo, id.vars = "Regija", measure.vars = names(prebivalstvo)[-1],
-                                      variable.name = "Leto", value.name = "Stevilo")
+indeksi <- melt(indeksi, id.vars = "Vrsta_pogona", measure.vars = names(indeksi)[-1],
+                            variable.name = "Leto", value.name = "Indeks")
 
 
 # POVPREČNA BRUTO PLAČA PO REGIJAH
@@ -102,6 +81,8 @@ placa_2015 <- filter(placa, Leto == '2015')
 placa_2015 <- placa_2015[,-2]
 placa_2010 <- filter(placa, Leto == '2010')
 placa2010 <- placa_2010[,-1]
+
+
 # ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH NA 10.000 PREBIVALCEV PO REGIJAH
 
 umrli <- read_delim("podatki/Stevilo_umrlih_v_cestnoprometnih_nesrecah_na_10000_prebivalcev.csv", delim=";", col_names = c("nekaj","Regija", 2001:2017),
@@ -117,6 +98,7 @@ umrli <- melt(umrli, id.vars = "Regija", measure.vars = names(umrli)[-1],
 umrli$Leto <- as.numeric(umrli$Leto)
 umrli$Leto <- c(2001:2017)
 
+
 # ŠTEVILO OSEBNIH AVTOMOBILOV NA 1000 PREBIVALCEV PO REGIJAH
 
 avtomobili <-read_delim("podatki/Stevilo_osebnih_avtomobilov_na_1000_prebivalcev.csv", delim=";", col_names = c("nekaj","Regija", 2001:2017),
@@ -131,6 +113,8 @@ avtomobili <- melt(avtomobili, id.vars = "Regija", measure.vars = names(avtomobi
 
 avtomobili$Leto <- as.numeric(avtomobili$Leto)
 avtomobili$Leto <- c(2001:2017)
+
+
 # POVPREČNA STAROST OSEBNEGA AVTOMOBILA PO REGIJAH
 
 starost <- read_delim("podatki/Povprecna_starost_osebnega_avtomobila.csv", delim=";", col_names = c("nekaj","Regija", 2001:2017),
@@ -143,17 +127,7 @@ starost$Regija <- gsub("Spodnjeposavska", "Posavska", starost$Regija)
 starost <- melt(starost, id.vars = "Regija", measure.vars = names(starost)[-1],
                    variable.name = "Leto", value.name = "Starost_avtomobila")
 
-# STEVILO CESTNIH VOZIL PO REGIJAH
-
-vozila <- read_csv2("podatki/Cestna_vozila.csv", col_names = c("nekaj","Regija", 2001:2017),
-                    skip=5, n_max=12, locale = locale(encoding = "Windows-1250"))
-vozila <- vozila[,-1]
-vozila$Regija <- gsub("Jugovzhodna Slovenija", "Jugovzhodna", vozila$Regija)
-vozila$Regija <- gsub("Notranjsko-kraška", "Primorsko-notranjska", vozila$Regija)
-vozila$Regija <- gsub("Spodnjeposavska", "Posavska", vozila$Regija)
-
-vozila <- melt(vozila, id.vars = "Regija", measure.vars = names(vozila)[-1],
-               variable.name = "Leto", value.name = "Vozila")
+starost2015 <- filter(starost, Leto == '2015')
 
 # Zapišimo podatke v razpredelnico obcine
 #obcine <- uvozi.obcine()
