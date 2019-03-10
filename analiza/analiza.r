@@ -32,14 +32,14 @@ graf_regresija_avti <- ggplot(avti_regije, aes(x=Leto, y=Stevilo)) +
   geom_smooth(method=lm, fullrange = TRUE, color = 'blue') +
   geom_point(data=napoved_avti, aes(x=Leto, y=Stevilo), color='red', size=2) +
   geom_point() +
-  labs(title='Napoved števila smrti v prometu v naslednjih letih', y="Stevilo")
+  labs(title='Napoved števila osebnih avtomobilov na 1000 prebivalcev v prometu v naslednjih letih', y="Stevilo")
 
 print(graf_regresija_avti)
 
 ##################################################################################
 # CLUSTER REGIJ ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH
 
-umrli
+# umrli
 grp <- group_by(umrli, Regija)
 umrli_sum <- summarise(grp, vsote=sum(Umrli, na.rm = TRUE))
 
@@ -81,7 +81,7 @@ print(zemljevid_cluster_umrli)
 ####################################################################################
 # CLUSTER REGIJ GLEDE NA BRUTO PLAČO
 
-placa
+# placa
 grp <- group_by(placa, Regija)
 placa_sum <- summarise(grp, vsote=sum(Placa, na.rm = TRUE))
 
