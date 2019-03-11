@@ -5,34 +5,6 @@ library(dplyr)
 library(tidyr)
 library(reshape2)
 
-#sl <- locale("sl", decimal_mark=",", grouping_mark=".")
-
-# Funkcija, ki uvozi občine iz Wikipedije
-uvozi.obcine <- function() {
-  link <- "http://sl.wikipedia.org/wiki/Seznam_ob%C4%8Din_v_Sloveniji"
-  stran <- html_session(link) %>% read_html()
-  tabela <- stran %>% html_nodes(xpath="//table[@class='wikitable sortable']") %>%
-    .[[1]] %>% html_table(dec=",")
-  for (i in 1:ncol(tabela)) {
-    if (is.character(tabela[[i]])) {
-      Encoding(tabela[[i]]) <- "UTF-8"
-    }
-  }
-  colnames(tabela) <- c("obcina", "povrsina", "prebivalci", "gostota", "naselja",
-                        "ustanovitev", "pokrajina", "regija", "odcepitev")
-  tabela$obcina <- gsub("Slovenskih", "Slov.", tabela$obcina)
-  tabela$obcina[tabela$obcina == "Kanal ob Soči"] <- "Kanal"
-  tabela$obcina[tabela$obcina == "Loški potok"] <- "Loški Potok"
-  for (col in c("povrsina", "prebivalci", "gostota", "naselja", "ustanovitev")) {
-    tabela[[col]] <- parse_number(tabela[[col]], na="-", locale=sl)
-  }
-  for (col in c("obcina", "pokrajina", "regija")) {
-    tabela[[col]] <- factor(tabela[[col]])
-  }
-  return(tabela)
-}
-
-
 
 # POTNIŠKI PROMET IN PREVOZ
 promet <- read_csv2("podatki/potniski_promet.csv", col_names = c("Potniki(1000)", "Vrsta_prevoza", 2001:2017),
@@ -82,7 +54,7 @@ placa <- melt(placa, id.vars = "Regija", measure.vars = names(placa)[-1],
 placa2015 <- filter(placa, Leto == '2015')
 placa2015 <- placa2015[,-2]
 placa2010 <- filter(placa, Leto == '2010')
-placa2010 <- placa_2010[,-1]
+placa2010 <- placa2010[,-1]
 
 
 # ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH NA 10.000 PREBIVALCEV PO REGIJAH
@@ -97,8 +69,8 @@ umrli$Regija <- gsub("Notranjsko-kraška", "Primorsko-notranjska", umrli$Regija)
 
 umrli <- melt(umrli, id.vars = "Regija", measure.vars = names(umrli)[-1],
               variable.name = "Leto", value.name = "Umrli")
-umrli$Leto <- as.numeric(umrli$Leto)
-umrli$Leto <- c(2001:2017)
+umrli$Leto <- as.numeric(levels(umrli$Leto))[umrli$Leto]
+
 
 
 # ŠTEVILO OSEBNIH AVTOMOBILOV NA 1000 PREBIVALCEV PO REGIJAH
@@ -113,9 +85,7 @@ avtomobili$Regija <- gsub("Spodnjeposavska", "Posavska", avtomobili$Regija)
 avtomobili <- melt(avtomobili, id.vars = "Regija", measure.vars = names(avtomobili)[-1],
               variable.name = "Leto", value.name = "Avtomobili")
 
-avtomobili$Leto <- as.numeric(avtomobili$Leto)
-avtomobili$Leto <- c(2001:2017)
-
+avtomobili$Leto <- as.numeric(levels(avtomobili$Leto))[avtomobili$Leto]
 
 # POVPREČNA STAROST OSEBNEGA AVTOMOBILA PO REGIJAH
 
@@ -131,15 +101,4 @@ starost <- melt(starost, id.vars = "Regija", measure.vars = names(starost)[-1],
 
 starost2015 <- filter(starost, Leto == '2015')
 
-# Zapišimo podatke v razpredelnico obcine
-#obcine <- uvozi.obcine()
-
-# Zapišimo podatke v razpredelnico druzine.
-#druzine <- uvozi.druzine(levels(obcine$obcina))
-
-# Če bi imeli več funkcij za uvoz in nekaterih npr. še ne bi
-# potrebovali v 3. fazi, bi bilo smiselno funkcije dati v svojo
-# datoteko, tukaj pa bi klicali tiste, ki jih potrebujemo v
-# 2. fazi. Seveda bi morali ustrezno datoteko uvoziti v prihodnjih
-# fazah.
 
