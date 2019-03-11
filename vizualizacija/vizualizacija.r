@@ -20,23 +20,6 @@ graf_promet <- ggplot(data = promet, mapping = aes(x=Leto, y=Stevilo, group=Vrst
 
 
 
-
-graf_delez_ljudi <- ggplot(data = filter(delez_ljudi, Drzava == 'Austria' | Drzava == 'Bulgaria' |
-                                           Drzava == 'Croatia' | Drzava == 'Czechia' | Drzava == 'Estonia' |
-                                           Drzava == 'France' | Drzava == 'Hungary' | Drzava == 'Ireland' |
-                                           Drzava == 'Sweden' | Drzava == 'Poland' |
-                                           Drzava == 'Slovenia' | Drzava == 'Switzerland'),
-                           mapping = aes(x=Leto, y=Delez, color=Prevozno_sredstvo)) +
-  labs(color='Prevozno sredstvo') +
-  ggtitle("Deleži uporabe prevoznih sredstev") +
-  labs(x = 'Leto', y = 'Delež') +
-  geom_line() +
-  #facet_grid(Drzava~.) +
-  facet_wrap(Drzava~., ncol=3) +
-  theme(axis.text.x = element_text(angle = 90, size = 5)) 
-
-
-
 # točkasti graf ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH NA 10.000 PREBIVALCEV PO REGIJAH
 
 graf_umrli1 <- ggplot(data = filter(umrli, Regija == 'Pomurska' | Regija == 'Podravska' |
@@ -53,9 +36,6 @@ graf_umrli1 <- ggplot(data = filter(umrli, Regija == 'Pomurska' | Regija == 'Pod
 
 
 
-
-
-
 # stolpični diagram POVPREČNA STAROST OSEBNEGA AVTOMOBILA PO REGIJAH
 graf_starost <- ggplot(data = starost, mapping = aes(x=Regija, y=Starost_avtomobila, color=Leto)) +
   geom_bar(stat = 'identity', position = 'dodge') +
@@ -64,13 +44,6 @@ graf_starost <- ggplot(data = starost, mapping = aes(x=Regija, y=Starost_avtomob
   ggtitle("Povprečna starost osebnega avtomobila po regijah")
 
 
-graf_gas_pmio <- ggplot(data = filter(gas_pmio, Drzava != 'Luxembourg', Drzava != 'Estonia'),
-                        mapping = aes(x=Drzava, y=Kolicina_kg_na_mio, fill=factor(Leto))) +
-  labs(fill='Leto') +
-  ggtitle('Količina toplogrednih plinov v ozračju') +
-  geom_bar(stat = 'identity', position = 'dodge') +
-  labs(x = 'Država', y = 'kg na milijon prebivalcev') +
-  theme(axis.text.x = element_text(angle = 90, size = 8))
 
 # linijski graf INDEKS ŠTEVILA AVTOMOBILOV GLEDE NA VRSTO POGONA
 
@@ -80,6 +53,12 @@ graf_vrsta_pogona <- ggplot(data=indeksi, mapping = aes(x=Leto, y=Indeks, group=
   theme(legend.text = element_text(size=8)) + 
   ggtitle("Indeks števila avtomobilov glede na vrsto pogona")
 
+
+graf_avtomobili <- ggplot(data=avtomobili %>% filter(Leto=='2015'), mapping = aes(x=Regija, y=Avtomobili, color=Regija))+
+  geom_bar(stat = 'identity') +
+  theme(axis.text.x = element_text(angle = 90, size = 8)) +
+  theme(legend.text = element_text(size=8)) + 
+  ggtitle("Števila avtomobilov po regijah")
 
 
 
