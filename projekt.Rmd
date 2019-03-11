@@ -168,7 +168,7 @@ cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193
 Korelacija med starostjo avtomobila in povprečno plačo je negativna in precej visoka, kar pomeni, da imajo ljudje z višjimi plačami novejše avtomobile in obratno.
 
 
-***
+*** 
 
 # Napredna analiza podatkov
 
@@ -200,13 +200,6 @@ zemljevid_cluster_umrli
 
 OPIS
 
-
-```{r zemljevid_cluster_place, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Zemljevid 4', warning=FALSE} 
-zemljevid_cluster_place 
-
-```
-
-OPIS
 
 ***
 
