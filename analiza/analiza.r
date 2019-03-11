@@ -115,6 +115,21 @@ zemljevid_cluster_place <- ggplot() + geom_polygon(data=left_join(zemljevid, sku
   labs(y = " ") +
   scale_fill_brewer(palette="YlOrRd", na.value = "#e0e0d1") 
 
+###################################################################################
+# SHINY
+
+
+graf.regije <- function(regija){
+  ggplot(umrli %>% filter(Regija %in% regija)) + aes(x=Leto, y=Umrli, group=Regija, color=Regija) +
+    geom_line() + geom_point()+ xlab("Leto") + ylab("Število umrlih") +
+    theme(axis.text.x = element_text(angle = 90, vjust = 0.3, hjust=1))
+}
+
+graf_avto <- function(cifra) {
+  ggplot(avtomobili %>% filter(Leto==cifra), aes(x=Regija, y=Avtomobili)) + 
+    ylim(0, 250) + geom_bar(stat = "identity") +
+    ggtitle("naslov") + xlab("Regija") + ylab("Število avtomobilov")
+}
 
 
 
