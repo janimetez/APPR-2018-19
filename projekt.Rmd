@@ -26,62 +26,147 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 # Izbira teme
 
-Za vzorec bomo prikazali nekaj podatkov o slovenskih občinah.
+V svoji projektni nalogi bom analiziral različne načine transporta v Sloveniji. 
+Ogledal si bom tudi število umrlih v prometnih nesrečah v različnih vrstah transporta glede na regijo. Poiskal bom povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. Raziskal bom, koliko ljudje prepotujejo z medkrajevnim linijskim prevozom. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju. Zanimalo me bo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih.
 
-![](slike/grb.png)
+##
+
+V projektu bom analiziral različne načine transporta ljudi in blaga v evropskih državah ter vplih le-teh na okolje in varnost v prometu.
+
+Skozi analize podatkov bom skušal poiskati povezave med priljubljenostjo določene vrste transporta ter gospodarsko razvitostjo države. Prav tako bom primerjal vrste transporta glede na njihovo varnost, ter obravnaval vpliv transporta na okolje.
+
+Glavni cilji moje analize bodo, da bi za vsako od evropskih držav poiskal najbolj varen način transporta in tistega, ki je okolju najbolj prijazen ter ugotoviti, ali obstaja povezava med gospodarsko razvitostjo države in vrsto transporta, ki jo prebivalci največ uporabljajo. Prikazal bom tudi, kako so se deleži uporabe različnih tipov transporta spreminjali v zadnjih 10 letih.
+
+Nekatere primerjave in analize:
+
+- primerjava med posameznimi državami glede na to kolikšen delež ljudi uporablja določeno vrsto transporta,
+- primerjava med posameznimi državami glede na to kako prometno varna je katera, primerjava tudi med prevoznimi sredstvi
+- primerjava količine toplogrednih plinov v posameznih državah in iskanje povezave s prometom (npr. države kjer manjši delež ljudi uporablja javni potniški promet ima v zraku več toplogrednih plinov)
+- analiza povezave med gospodarsko razvitostjo države in uporabo javnega potniškega prometa (npr. v državah z višjim BDPpc ljudje več uporabljajo javni potniški promet)
+
 
 ***
 
 # Obdelava, uvoz in čiščenje podatkov
 
-```{r uvoz, echo=FALSE, message=FALSE}
+```{r uvoz, echo=FALSE, message=FALSE, warning=FALSE}
 source("uvoz/uvoz.r", encoding="UTF-8")
 ```
+Uporabil sem podatke, ki sem jih pridobil na spletnih strani Statističnega urada Republike Slovenije. Podatki večinoma obsegajo obdobje od leta 2001 do leta 2017.
+Podatke sem najprej shranil kot CSV datoteke, nato pa jih uredil in jih zbral v več razpredelnicah v obliki *tidy data*.
 
-Uvozili smo podatke o občinah v obliki CSV s statističnega urada ter v obliki HTML
-z Wikipedije. Podatke imamo v dveh razpredelnicah v obliki *tidy data*.
+Tabela 1 (promet: Število potnikov v posameznei vrsti prevoza):
 
-1. `druzine` - podatki o družinah za vsako občino
-  - `obcina` - spremenljivka: ime občine (neurejen faktor),
-  - `velikost.druzine` - spremenljivka: število otrok v družini (število: 1, 2, 3 ali 4, kjer zadnja vrednost pomeni 4 ali več),
-  - `stevilo.druzin` - meritev: število družin z ustreznim številom otrok v ustrezni občini (število).
+- `Vrsta_prevoza` - spremenljivka: prevozno sredstvo
+- `Leto` - spremenljivka: leto
+- `Potniki` - meritev: število potnikov v 1000
 
-2. `obcine` - podatki o občinah
-  - `obcina` - spremenljivka: ime občine (neurejen faktor),
-  - `povrsina` - meritev: površina občine v km$^2$ (število),
-  - `prebivalci` - meritev: prebivalstvo občine (število),
-  - `gostota` - meritev: število prebivalcev na km$^2$ (število),
-  - `naselja` - meritev: število naselij v občini (število),
-  - `ustanovitev` - meritev: leto ustanovitve občine (število),
-  - `pokrajina` - meritev: pokrajina, ki ji občina pripada (neurejen faktor),
-  - `regija` - meritev: regija, ki ji občina pripada (neurejen faktor),
-  - `odcepitev` - meritev: podatki o občinah, od katerih se je občina odcepila (besedilo).
+Tabela 2 (pogon: Število avtomobilov glede na vrsto pogona):
 
-**Opomba**: da bi razpredelnica `obcine` res bila v obliki *tidy data*, bi morali odstraniti stolpec `gostota` (saj je izpeljan iz stolpcev `povrsina` in `prebivalci`), podatke o pokrajinah pa bi morali premakniti v drugo razpredelnico, saj nekatere občine pripadajo dvema pokrajinama. Podobno bi morali narediti tudi s stolpcem `odcepitev`.
+- `Vrsta_pogona` - spremenljivka: Vrsta pogona avtomobila   
+- `Leto` - spremenljivka: leto
+- `Stevilo_avtomobilov` - meritev: število avtomobilov v prometu 
 
-Spodnji graf prikazuje porazdelitev števila naselij v občinah.
+Tabela 3 (umrli: Število umrlih v cestnoprometnih nesrečah na 10.000 prebivalcev po regijah):
 
-```{r histogram, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Histogram števila naselij v občinah'}
-ggplot(obcine, aes(x=naselja)) + geom_histogram() +
-  ggtitle("Pogostost števila naselij") + xlab("Število naselij") + ylab("Število občin")
-```
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Umrli` - meritev: število umrlih na 10.000 prebivalcev
+
+Tabela 4 (avtomobili: Število osebnih avtomobilov na 1000 prebivalcev po regijah):
+
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Avtomobili` - meritev: število avtomobilov na 1000 prebivalcev
+
+Tabela 5(starost: Povprečna starost osebnega avtomobila po regijah):
+
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Umrli` - meritev: povprečna starost avtomobila
+
+
 
 ***
-
+#{r graf_locevanje_skozi_leta, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
+ 
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 source("vizualizacija/vizualizacija.r", encoding="UTF-8")
 ```
 
-Spodnji zemljevid prikazuje povprečno velikost družine za vsako občino.
-
-```{r zemljevid, echo=FALSE, fig.align='center', fig.cap='Zemljevid povprečnega števila otrok v družini'}
-ggplot() + geom_polygon(data=left_join(zemljevid, povprecja, by=c("OB_UIME"="obcina")),
-                        aes(x=long, y=lat, group=group, fill=povprecje)) +
-  ggtitle("Povprečno število otrok v družini") + xlab("") + ylab("") +
-  guides(fill=guide_colorbar(title="Povprečje"))
+```{r graf_promet, echo=FALSE, fig.align='center', message=FALSE, paged.print=TRUE, fig.cap='Graf 1', warning=FALSE}
+graf_promet
 ```
+
+Iz grafa je razvidno, da se največ potnikov prevaža s cestnim javnim linijskim prevozom.
+Okrog leta 2004 opazimo upad uporabe cestnega javnega linijskega prevoza. Možen razlog za to so ugodne
+družbene razmere, saj so si ljudje lahko privoščili lasten avtomobil, kar je povzročilo prej omenjen upad.
+Pri ostalih vrstah prevoza je število potnikov skozi leta precej konstantno.
+To bi lahko razložil s tem, da so te vrste prevoza večinoma namenjene transportu blaga, vendar 
+sama tehnologija se na teh področjih ni veliko napredovala.
+
+
+
+```{r graf_starost, echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 2'} 
+graf_starost
+```
+
+Iz grafa lahko ugotovimo, da povprečna starost osebnega avtomobila skozi leta narašča po vseh regijah.
+Po posamezni regiji je povprečen avtomobil star med 7 in 10 let.
+
+
+
+
+```{r graf_umrli1, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Graf 3'} 
+graf_umrli1
+```
+
+
+
+
+
+
+
+```{r graf_vrsta_pogona, echo=FALSE, message=FALSE, fig.align='center', warning=FALSE, fig.cap='Graf 4'} 
+graf_vrsta_pogona
+```
+
+
+Ob pogledu na graf lahko hitro ugotovimo, katere vrste pogona spadajo med alternativne in s tem najbolj 
+obetavne v prihodnosti. Število električnih avtomobilov v Sloveniji se je leta 2015 več kot podvojilo,
+tudi v prihodnjih letih pa ta delež najhitreje narašča. Med alternativne vrste pogona prištevamo tudi hibride,
+kateri so v Sloveniji vse bolj popularni, predvsem v mestnih okrožjih. Njihovo število strmo narašča in lahko pričakujemo,
+da bodo v prihodnjih 10 letih prevzeli vodilno mesto med avtomobili. 
+Prav tako se je v preteklih letih marsikdo odločil predelati svoj avtomobil na plin. 
+Sam menim, da je prihodnost v elektriki, saj je z dokončnim prebojem na trg avtomobilov, ta vrsta pogona že precej
+razširjena in vse bolj dostopna ter priljubljena med vozniki.
+
+
+
+```{r zemljevid_placa, echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Zemljevid 1'} 
+zemljevid_placa
+```
+
+
+Iz zemljevida opazimo, da so najvišje plače v osrednji Sloveniji, kar je tudi pričakovano.
+
+
+
+```{r zemljevid_starost, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Zemljevid 2'} 
+zemljevid_starost
+```
+
+
+Na zemljevidu opazimo, da je povprečna starost avtomobila najnižja v osrednji Sloveniji. 
+To bi lahko razložili, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
+si lahko tamkajšnji prebivalci privoščijo tudi novejše avtomobile. 
+
+cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193
+
+Korelacija med starostjo avtomobila in povprečno plačo je negativna in precej visoka, kar pomeni, da imajo ljudje z višjimi plačami novejše avtomobile in obratno.
+
 
 ***
 
@@ -91,17 +176,37 @@ ggplot() + geom_polygon(data=left_join(zemljevid, povprecja, by=c("OB_UIME"="obc
 source("analiza/analiza.r", encoding="UTF-8")
 ```
 
-Spodnji graf prikazuje povezavo med številom naselij in površino občine.
-
-```{r graf, echo=FALSE, fig.align='center', fig.cap='Povezava med številom naselij in površino občine'}
-ggplot(inner_join(obcine, data.frame(obcina=names(skupine),
-                                     skupina=factor(skupine)), by="obcina")
-, aes(x=povrsina, y=naselja, color=skupina, size=prebivalci/1000)) + geom_point() +
-  ggtitle("Število naselij glede na površino občine") +
-  xlab(expression("Površina (km"^2 * ")")) + ylab("Št. naselij") +
-  guides(color=guide_legend(title="Skupina"),
-         size=guide_legend(title="Prebivalci (* 1000)"))
+```{r graf_regresija_umrli , echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 5'} 
+graf_regresija_umrli
 ```
+
+Z regresijsko premico lahko ponazorimo, da število smrti v prometu z leti upada. 
+Možen razlog za to so boljši avtomobili, ki so tudi tehnološko bolj napredni.
+Opremljeni so z veliko varnostnimi sistemi, ki nam pomgajo v nevarnih situacijah v prometu in s tem preprečijo marsikatero nesrečo.
+
+```{r graf_regresija_avti , echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 6'} 
+graf_regresija_avti
+```
+
+
+
+Število osebnih avtomobilov skozi leta narašča. Razlog za to lahko iščemo v miselnosti sedanje družbe, saj je avtomobil za marsikoga nujno prevozno sredstvo, po drugi strani pa tudi statusni simbol. 
+Avtomobil nam ponuja tudi svobodo gibanja, saj lahko potujemo kamor in kdaj želimo. 
+
+
+```{r zemljevid_cluster_umrli, echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Zemljevid 3', warning=FALSE} 
+zemljevid_cluster_umrli 
+```
+
+OPIS
+
+
+```{r zemljevid_cluster_place, echo=FALSE, message=FALSE, fig.align='center', fig.cap='Zemljevid 4', warning=FALSE} 
+zemljevid_cluster_place 
+
+```
+
+OPIS
 
 ***
 
