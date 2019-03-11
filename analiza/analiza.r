@@ -18,7 +18,7 @@ graf_regresija_umrli <- ggplot(umrli_slo, aes(x=Leto, y=Stevilo)) +
   geom_point() +
   labs(title='Napoved števila smrti v prometu v naslednjih letih', y="Stevilo")
 
-print(graf_regresija_umrli)
+
 
 # REGRESIJSKA PREMICA ZA ŠTEVILO OSEBNIH AVTOMOBILOV NA 1000 PREBIVALCEV V PRIHODNOSTI
 avti <- group_by(avtomobili,Leto)
@@ -34,7 +34,8 @@ graf_regresija_avti <- ggplot(avti_regije, aes(x=Leto, y=Stevilo)) +
   geom_point() +
   labs(title='Napoved števila osebnih avtomobilov na 1000 prebivalcev v prometu v naslednjih letih', y="Stevilo")
 
-print(graf_regresija_avti)
+
+
 
 ##################################################################################
 # CLUSTER REGIJ ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH
@@ -76,7 +77,6 @@ zemljevid_cluster_umrli <- ggplot() + geom_polygon(data=left_join(zemljevid, sku
   labs(y = " ") +
   scale_fill_brewer(palette="YlOrRd", na.value = "#e0e0d1") 
 
-print(zemljevid_cluster_umrli)
 
 ####################################################################################
 # CLUSTER REGIJ GLEDE NA BRUTO PLAČO
@@ -115,7 +115,7 @@ zemljevid_cluster_place <- ggplot() + geom_polygon(data=left_join(zemljevid, sku
   labs(y = " ") +
   scale_fill_brewer(palette="YlOrRd", na.value = "#e0e0d1") 
 
-print(zemljevid_cluster_place)
+
 
 
 #==================================================================================
