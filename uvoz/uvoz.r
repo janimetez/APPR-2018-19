@@ -53,6 +53,8 @@ pogon <- read_csv2("podatki/vrsta_pogona.csv", col_names = c("Osebni avtomobili"
 pogon <- pogon[c(3,2,4)] %>% fill(2)
 
 pogon <- filter(pogon, Vrsta_pogona !='NA')
+pogon <- filter(pogon, Vrsta_pogona !='Vrsta pogona in goriva - SKUPAJ')
+
 
 
 indeksi <- dcast(pogon, Vrsta_pogona~Leto, value.var = 'Stevilo_avtomobilov' )
@@ -77,9 +79,9 @@ placa <- placa[c(1,2,3,4,5,6,7,9,10,8,11,12),]
 placa <- melt(placa, id.vars = "Regija", measure.vars = names(placa)[-1],
      variable.name = "Leto", value.name = "Placa")
 
-placa_2015 <- filter(placa, Leto == '2015')
-placa_2015 <- placa_2015[,-2]
-placa_2010 <- filter(placa, Leto == '2010')
+placa2015 <- filter(placa, Leto == '2015')
+placa2015 <- placa2015[,-2]
+placa2010 <- filter(placa, Leto == '2010')
 placa2010 <- placa_2010[,-1]
 
 
