@@ -26,23 +26,13 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 # Izbira teme
 
-V svoji projektni nalogi bom analiziral različne načine transporta v Sloveniji. 
-Ogledal si bom tudi število umrlih v prometnih nesrečah v različnih vrstah transporta glede na regijo. Poiskal bom povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. Raziskal bom, koliko ljudje prepotujejo z medkrajevnim linijskim prevozom. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju. Zanimalo me bo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih.
+V svoji projektni nalogi bom analiziral različne načine transporta tako ljudi kot tudi blaga v Sloveniji. 
 
+Raziskal bom s katero vrsto prevoza se ljudje največ prevažajo in kako se le-to spreminja skozi leta. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju, hkrati pa me bo zanimalo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih. Prav tako bom poskušal poiskati povezavo med povprečno starostjo avtomobila in povprečno bruto plačo po regijah in pogledal kako se plače in povprečna starost spreminjata skozi daljši časovni razpon. 
+Zanimala me bo tudi primerjava števila umrlih v prometnih nesrečah preko različnih vrst transporta in preko različnih regij. S pomočjo analize podatkov bom poiskal povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. 
+
+Glavni cilji moje analize bodo, da bi ugotovil, kako se različne vrste transporta, število umrlih, povprečno število avtomobilov in njihova povprečna starost spreminjajo skozi leta. Spremembe bom ponekod ponazoril tudi glede na slovenske regije. Hkrati bom trende spreminjanja poskušal razložiti s poenostavljeno razlago. 
 ##
-
-V projektu bom analiziral različne načine transporta ljudi in blaga v evropskih državah ter vplih le-teh na okolje in varnost v prometu.
-
-Skozi analize podatkov bom skušal poiskati povezave med priljubljenostjo določene vrste transporta ter gospodarsko razvitostjo države. Prav tako bom primerjal vrste transporta glede na njihovo varnost, ter obravnaval vpliv transporta na okolje.
-
-Glavni cilji moje analize bodo, da bi za vsako od evropskih držav poiskal najbolj varen način transporta in tistega, ki je okolju najbolj prijazen ter ugotoviti, ali obstaja povezava med gospodarsko razvitostjo države in vrsto transporta, ki jo prebivalci največ uporabljajo. Prikazal bom tudi, kako so se deleži uporabe različnih tipov transporta spreminjali v zadnjih 10 letih.
-
-Nekatere primerjave in analize:
-
-- primerjava med posameznimi državami glede na to kolikšen delež ljudi uporablja določeno vrsto transporta,
-- primerjava med posameznimi državami glede na to kako prometno varna je katera, primerjava tudi med prevoznimi sredstvi
-- primerjava količine toplogrednih plinov v posameznih državah in iskanje povezave s prometom (npr. države kjer manjši delež ljudi uporablja javni potniški promet ima v zraku več toplogrednih plinov)
-- analiza povezave med gospodarsko razvitostjo države in uporabo javnega potniškega prometa (npr. v državah z višjim BDPpc ljudje več uporabljajo javni potniški promet)
 
 
 ***
@@ -55,7 +45,7 @@ source("uvoz/uvoz.r", encoding="UTF-8")
 Uporabil sem podatke, ki sem jih pridobil na spletnih strani Statističnega urada Republike Slovenije. Podatki večinoma obsegajo obdobje od leta 2001 do leta 2017.
 Podatke sem najprej shranil kot CSV datoteke, nato pa jih uredil in jih zbral v več razpredelnicah v obliki *tidy data*.
 
-Tabela 1 (promet: Število potnikov v posameznei vrsti prevoza):
+Tabela 1 (promet: Število potnikov v posamezni vrsti prevoza):
 
 - `Vrsta_prevoza` - spremenljivka: prevozno sredstvo
 - `Leto` - spremenljivka: leto
@@ -79,7 +69,7 @@ Tabela 4 (avtomobili: Število osebnih avtomobilov na 1000 prebivalcev po regija
 - `Leto` - spremenljivka: leto
 - `Avtomobili` - meritev: število avtomobilov na 1000 prebivalcev
 
-Tabela 5(starost: Povprečna starost osebnega avtomobila po regijah):
+Tabela 5 (starost: Povprečna starost osebnega avtomobila po regijah):
 
 - `Regija` - spremenljivka: regija
 - `Leto` - spremenljivka: leto
@@ -101,8 +91,8 @@ graf_promet
 ```
 
 Iz grafa je razvidno, da se največ potnikov prevaža s cestnim javnim linijskim prevozom.
-Okrog leta 2004 opazimo upad uporabe cestnega javnega linijskega prevoza. Možen razlog za to so ugodne
-družbene razmere, saj so si ljudje lahko privoščili lasten avtomobil, kar je povzročilo prej omenjen upad.
+Okrog leta 2004 opazim upad uporabe cestnega javnega linijskega prevoza. Možen razlog za to so ugodne
+družbene razmere  v tistem obdobju, saj so si ljudje lahko privoščili lasten avtomobil.
 Pri ostalih vrstah prevoza je število potnikov skozi leta precej konstantno.
 To bi lahko razložil s tem, da so te vrste prevoza večinoma namenjene transportu blaga, vendar 
 sama tehnologija se na teh področjih ni veliko napredovala.
@@ -113,7 +103,7 @@ sama tehnologija se na teh področjih ni veliko napredovala.
 graf_starost
 ```
 
-Iz grafa lahko ugotovimo, da povprečna starost osebnega avtomobila skozi leta narašča po vseh regijah.
+Iz grafa lahko ugotovim, da povprečna starost osebnega avtomobila skozi leta narašča po vseh regijah.
 Po posamezni regiji je povprečen avtomobil star med 7 in 10 let.
 
 
@@ -134,10 +124,10 @@ graf_vrsta_pogona
 ```
 
 
-Ob pogledu na graf lahko hitro ugotovimo, katere vrste pogona spadajo med alternativne in s tem najbolj 
+Ob pogledu na graf lahko hitro ugotovim, katere vrste pogona spadajo med alternativne in s tem najbolj 
 obetavne v prihodnosti. Število električnih avtomobilov v Sloveniji se je leta 2015 več kot podvojilo,
 tudi v prihodnjih letih pa ta delež najhitreje narašča. Med alternativne vrste pogona prištevamo tudi hibride,
-kateri so v Sloveniji vse bolj popularni, predvsem v mestnih okrožjih. Njihovo število strmo narašča in lahko pričakujemo,
+kateri so v Sloveniji vse bolj popularni, predvsem v mestnih okrožjih. Njihovo število strmo narašča in lahko pričakujem,
 da bodo v prihodnjih 10 letih prevzeli vodilno mesto med avtomobili. 
 Prav tako se je v preteklih letih marsikdo odločil predelati svoj avtomobil na plin. 
 Sam menim, da je prihodnost v elektriki, saj je z dokončnim prebojem na trg avtomobilov, ta vrsta pogona že precej
@@ -150,7 +140,7 @@ zemljevid_placa
 ```
 
 
-Iz zemljevida opazimo, da so najvišje plače v osrednji Sloveniji, kar je tudi pričakovano.
+Iz zemljevida opazim, da so najvišje plače v osrednji Sloveniji, kar je tudi pričakovano.
 
 
 
@@ -159,8 +149,8 @@ zemljevid_starost
 ```
 
 
-Na zemljevidu opazimo, da je povprečna starost avtomobila najnižja v osrednji Sloveniji. 
-To bi lahko razložili, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
+Na zemljevidu opazim, da je povprečna starost avtomobila najnižja v osrednji Sloveniji. 
+To bi lahko razložil, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
 si lahko tamkajšnji prebivalci privoščijo tudi novejše avtomobile. 
 
 cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193
@@ -180,7 +170,7 @@ source("analiza/analiza.r", encoding="UTF-8")
 graf_regresija_umrli
 ```
 
-Z regresijsko premico lahko ponazorimo, da število smrti v prometu z leti upada. 
+Z regresijsko premico lahko ponazorim, da število smrti v prometu z leti upada. 
 Možen razlog za to so boljši avtomobili, ki so tudi tehnološko bolj napredni.
 Opremljeni so z veliko varnostnimi sistemi, ki nam pomgajo v nevarnih situacijah v prometu in s tem preprečijo marsikatero nesrečo.
 
@@ -190,7 +180,7 @@ graf_regresija_avti
 
 
 
-Število osebnih avtomobilov skozi leta narašča. Razlog za to lahko iščemo v miselnosti sedanje družbe, saj je avtomobil za marsikoga nujno prevozno sredstvo, po drugi strani pa tudi statusni simbol. 
+Število osebnih avtomobilov skozi leta narašča. Razlog za to lahko iščem v miselnosti sedanje družbe, saj je avtomobil za marsikoga nujno prevozno sredstvo, po drugi strani pa tudi statusni simbol. 
 Avtomobil nam ponuja tudi svobodo gibanja, saj lahko potujemo kamor in kdaj želimo. 
 
 
