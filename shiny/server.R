@@ -5,7 +5,10 @@ function(input, output) {
     graf.regije(input$regija)
   })
   output$avto <- renderPlot({
-    graf_avto(input$Leto) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+    graf_avto(input$Leto) 
   })
   
 }
+
+
+
