@@ -9,14 +9,45 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 
 ## Analiza transporta v Sloveniji
 
-V svoji projektni nalogi bom analiziral različne načine transporta v Sloveniji. Zanimalo me bo, katero vrsto prevoza potniki najpogosteje uporabljajo. Ogledal si bom tudi število umrlih v prometnih nesrečah v različnih vrstah transporta glede na regijo. Poiskal bom povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. Raziskal bom, koliko ljudje prepotujejo z medkrajevnim linijskim prevozom. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju. Zanimalo me bo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih. 
+
+V svoji projektni nalogi bom analiziral različne načine transporta tako ljudi kot tudi blaga v Sloveniji. 
+
+Raziskal bom s katero vrsto prevoza se ljudje največ prevažajo in kako se le-to spreminja skozi leta. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju, hkrati pa me bo zanimalo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih. Prav tako bom poskušal poiskati povezavo med povprečno starostjo avtomobila in povprečno bruto plačo po regijah in pogledal kako se plače in povprečna starost spreminjata skozi daljši časovni razpon. 
+Zanimala me bo tudi primerjava števila umrlih v prometnih nesrečah preko različnih vrst transporta in preko različnih regij. S pomočjo analize podatkov bom poiskal povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. 
+
+Glavni cilji moje analize bodo, da bi ugotovil, kako se različne vrste transporta, število umrlih, povprečno število avtomobilov in njihova povprečna starost spreminjajo skozi leta. Spremembe bom ponekod ponazoril tudi glede na slovenske regije. Hkrati bom trende spreminjanja poskušal razložiti s poenostavljeno razlago. 
 
 #### Tabele:
-* Tabela 1: leto, vrsta prevoza, število potnikov
-* Tabela 2: leto, regija, število umrlih na 10.000 prebivalcev, povprečna starost avtomobila
-* Tabela 3: leto, prepotovana razdalja v kilometrih, število potnikov
-* Tabela 4: leto, regija, število vozil
-* Tabela 5: leto, število avtomobilov, vrsta pogona 
+Tabela 1 (promet: Število potnikov v posamezni vrsti prevoza):
+
+- `Vrsta_prevoza` - spremenljivka: prevozno sredstvo
+- `Leto` - spremenljivka: leto
+- `Potniki` - meritev: število potnikov v 1000
+
+Tabela 2 (pogon: Število avtomobilov glede na vrsto pogona):
+
+- `Vrsta_pogona` - spremenljivka: Vrsta pogona avtomobila   
+- `Leto` - spremenljivka: leto
+- `Stevilo_avtomobilov` - meritev: število avtomobilov v prometu 
+
+Tabela 3 (umrli: Število umrlih v cestnoprometnih nesrečah na 10.000 prebivalcev po regijah):
+
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Umrli` - meritev: število umrlih na 10.000 prebivalcev
+
+Tabela 4 (avtomobili: Število osebnih avtomobilov na 1000 prebivalcev po regijah):
+
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Avtomobili` - meritev: število avtomobilov na 1000 prebivalcev
+
+Tabela 5 (starost: Povprečna starost osebnega avtomobila po regijah):
+
+- `Regija` - spremenljivka: regija
+- `Leto` - spremenljivka: leto
+- `Umrli` - meritev: povprečna starost avtomobila
+
 
 #### Viri: 
 * https://pxweb.stat.si/pxweb/Database/Ekonomsko/22_transport/01_22211_transport_panoge/01_22211_transport_panoge.asp
