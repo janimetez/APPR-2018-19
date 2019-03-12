@@ -126,10 +126,14 @@ graf.regije <- function(regija){
 }
 
 graf_avto <- function(cifra) {
-  ggplot(avtomobili %>% filter(Leto==cifra), aes(x=Regija, y=Avtomobili)) + 
-    ylim(0, 250) + geom_bar(stat = "identity") +
-    ggtitle("naslov") + xlab("Regija") + ylab("Število avtomobilov")
+  ggplot(avtomobili %>% filter(Leto==cifra), aes(x=Regija, y=Avtomobili, color=Regija)) + 
+    ylim(0, 650) + geom_bar(stat = "identity") +
+    ggtitle("Število avtomobilov na 1000 prebivalcev po posameznih regijah") + xlab("Regija") + ylab("Število avtomobilov") +   
+    theme(axis.text.x = element_text(angle = 90, size = 8)) 
+
 }
+
+
 
 
 
