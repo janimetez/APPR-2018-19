@@ -54,13 +54,6 @@ graf_vrsta_pogona <- ggplot(data=indeksi, mapping = aes(x=Leto, y=Indeks, group=
   ggtitle("Indeks števila avtomobilov glede na vrsto pogona")
 
 
-graf_avtomobili <- ggplot(data=avtomobili %>% filter(Leto=='2015'), mapping = aes(x=Regija, y=Avtomobili, color=Regija))+
-  geom_bar(stat = 'identity') +
-  theme(axis.text.x = element_text(angle = 90, size = 8)) +
-  theme(legend.text = element_text(size=8)) + 
-  ggtitle("Števila avtomobilov po regijah")
-
-
 
 
 #########################################################################################
