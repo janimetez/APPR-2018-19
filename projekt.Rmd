@@ -38,7 +38,7 @@ Raziskal bom s katero vrsto prevoza se ljudje največ prevažajo in kako se le-t
 Zanimala me bo tudi primerjava števila umrlih v prometnih nesrečah preko različnih vrst transporta in preko različnih regij. S pomočjo analize podatkov bom poiskal povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. 
 
 Glavni cilji moje analize bodo, da bi ugotovil, kako se različne vrste transporta, število umrlih, povprečno število avtomobilov in njihova povprečna starost spreminjajo skozi leta. Spremembe bom ponekod ponazoril tudi glede na slovenske regije. Hkrati bom trende spreminjanja poskušal razložiti s poenostavljeno razlago. 
-##
+
 
 
 ***
@@ -157,11 +157,7 @@ Na zemljevidu opazimo, da je povprečna starost avtomobila najnižja v osrednji 
 To bi lahko razložili, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
 si lahko tamkajšnji prebivalci privoščijo tudi novejše avtomobile. 
 
-```{r cor, echo=TRUE}
-
-cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193
-
-```
+`cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193`
 
 Korelacija med starostjo avtomobila in povprečno plačo je negativna in precej visoka, kar pomeni, da imajo ljudje z višjimi plačami novejše avtomobile in obratno.
 
