@@ -12,6 +12,7 @@ prileg <- lm(data = umrli_slo, Stevilo ~ Leto )
 m <- data_frame(Leto=seq(2018,2022,1))
 napoved <- mutate(m, Stevilo=predict(prileg,m))
 napoved$Stevilo <- round(napoved$Stevilo, digits = 2)
+
 graf_regresija_umrli <- ggplot(umrli_slo, aes(x=Leto, y=Stevilo)) +
   geom_smooth(method=lm, fullrange = TRUE, color = 'blue') +
   geom_point(data=napoved, aes(x=Leto, y=Stevilo), color='red', size=2) +
@@ -78,43 +79,6 @@ zemljevid_cluster_umrli <- ggplot() + geom_polygon(data=left_join(zemljevid, sku
   scale_fill_brewer(palette="YlOrRd", na.value = "#e0e0d1") 
 
 
-####################################################################################
-# CLUSTER REGIJ GLEDE NA BRUTO PLAČO
-
-# placa
-grp <- group_by(placa, Regija)
-placa_sum <- summarise(grp, vsote=sum(Placa, na.rm = TRUE))
-
-placa_a <- dcast(placa, Regija~Leto, value.var = 'Placa' )
-placa_a <- left_join(placa_a, placa_sum, by = 'Regija')
-placa_a <- placa_a[order(placa_a$vsote, decreasing = FALSE),]
-placa_b <- placa_a[,-15]
-placa_b <- placa_b[,-1]
-
-n <- 6
-fit <- hclust(dist(scale(placa_b)))
-skupine <- cutree(fit, n)
-
-cluster4 <- mutate(placa_a, skupine)
-cluster4 <- cluster4[,-2:-15]
-colnames(cluster4) <- c("Regija", "Placa")
-# zemljevid
-
-skupaj <- left_join(regije, cluster4, by="Regija")
-
-
-zemljevid_cluster_place <- ggplot() + geom_polygon(data=left_join(zemljevid, skupaj, by=c("NAME_1"="Regija")),
-                                                   aes(x=long, y=lat, group=group, 
-                                                       fill=factor(Placa))) +
-  geom_line() +
-  theme(axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.text.y=element_blank(),
-        axis.ticks.y=element_blank()) +
-  guides(fill=guide_colorbar(title="Skupine")) +
-  ggtitle('Razvrstitev regij v skupine glede na povprečno bruto plačo') +
-  labs(x = " ") +
-  labs(y = " ") +
-  scale_fill_brewer(palette="YlOrRd", na.value = "#e0e0d1") 
-
 ###################################################################################
 # SHINY
 
@@ -128,7 +92,7 @@ graf.regije <- function(regija){
 graf_avto <- function(cifra) {
   ggplot(avtomobili %>% filter(Leto==cifra), aes(x=Regija, y=Avtomobili, color=Regija)) + 
     ylim(0, 650) + geom_bar(stat = "identity") +
-    ggtitle("Število avtomobilov na 1000 prebivalcev po posameznih regijah") + xlab("Regija") + ylab("Število avtomobilov") +   
+    xlab("Regija") + ylab("Število avtomobilov") +   
     theme(axis.text.x = element_text(angle = 90, size = 8)) 
 
 }
