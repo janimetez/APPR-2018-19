@@ -84,8 +84,7 @@ Tabela 5 (starost: Povprečna starost osebnega avtomobila po regijah):
 
 
 ***
-#{r graf_locevanje_skozi_leta, echo=FALSE, message=FALSE, warning=FALSE, fig.align='center'}
- 
+
 # Analiza in vizualizacija podatkov
 
 ```{r vizualizacija, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
@@ -158,7 +157,11 @@ Na zemljevidu opazimo, da je povprečna starost avtomobila najnižja v osrednji 
 To bi lahko razložili, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
 si lahko tamkajšnji prebivalci privoščijo tudi novejše avtomobile. 
 
+```{r cor, echo=TRUE}
+
 cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193
+
+```
 
 Korelacija med starostjo avtomobila in povprečno plačo je negativna in precej visoka, kar pomeni, da imajo ljudje z višjimi plačami novejše avtomobile in obratno.
 
@@ -171,7 +174,7 @@ Korelacija med starostjo avtomobila in povprečno plačo je negativna in precej 
 source("analiza/analiza.r", encoding="UTF-8")
 ```
 
-```{r graf_regresija_umrli , echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 5'} 
+```{r graf_regresija_umrli, echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 5'} 
 graf_regresija_umrli
 ```
 
@@ -179,7 +182,7 @@ Z regresijsko premico lahko ponazorimo, da število smrti v prometu z leti upada
 Možen razlog za to so boljši avtomobili, ki so tudi tehnološko bolj napredni.
 Opremljeni so z veliko varnostnimi sistemi, ki nam pomgajo v nevarnih situacijah v prometu in s tem preprečijo marsikatero nesrečo.
 
-```{r graf_regresija_avti , echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 6'} 
+```{r graf_regresija_avti, echo=FALSE, message=FALSE, fig.align='center',  fig.cap='Graf 6'} 
 graf_regresija_avti
 ```
 
