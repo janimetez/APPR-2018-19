@@ -26,6 +26,8 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 
 ![](slike/images.png)
+
+
 ***
 
 # Izbira teme
@@ -95,10 +97,10 @@ graf_promet
 ```
 
 Iz grafa je razvidno, da se največ potnikov prevaža s cestnim javnim linijskim prevozom.
-Okrog leta 2004 opazim upad uporabe cestnega javnega linijskega prevoza. Možen razlog za to so ugodne
+Okrog leta 2004 opazimo upad uporabe cestnega javnega linijskega prevoza. Možen razlog za to so ugodne
 družbene razmere  v tistem obdobju, saj so si ljudje lahko privoščili lasten avtomobil.
 Pri ostalih vrstah prevoza je število potnikov skozi leta precej konstantno.
-To bi lahko razložil s tem, da so te vrste prevoza večinoma namenjene transportu blaga, vendar 
+To bi lahko razložili s tem, da so te vrste prevoza večinoma namenjene transportu blaga, vendar 
 sama tehnologija se na teh področjih ni veliko napredovala.
 
 
@@ -107,7 +109,7 @@ sama tehnologija se na teh področjih ni veliko napredovala.
 graf_starost
 ```
 
-Iz grafa lahko ugotovim, da povprečna starost osebnega avtomobila skozi leta narašča po vseh regijah.
+Iz grafa lahko ugotovimo, da povprečna starost osebnega avtomobila skozi leta narašča po vseh regijah.
 Po posamezni regiji je povprečen avtomobil star med 7 in 10 let.
 
 
@@ -117,6 +119,7 @@ Po posamezni regiji je povprečen avtomobil star med 7 in 10 let.
 graf_umrli1
 ```
 
+Graf nam prikazuje število umrlih v nesrečah med leti 2001 in 2017 po posameznih regijah. Opazimo lahko trend, da v večini regij število smrti v cestnoprometnih nesrečah upada. Kot razlog lahko navedemo varnejše avtomobile in ceste.
 
 
 
@@ -128,14 +131,12 @@ graf_vrsta_pogona
 ```
 
 
-Ob pogledu na graf lahko hitro ugotovim, katere vrste pogona spadajo med alternativne in s tem najbolj 
+Ob pogledu na graf lahko hitro ugotovimo, katere vrste pogona spadajo med alternativne in s tem najbolj 
 obetavne v prihodnosti. Število električnih avtomobilov v Sloveniji se je leta 2015 več kot podvojilo,
 tudi v prihodnjih letih pa ta delež najhitreje narašča. Med alternativne vrste pogona prištevamo tudi hibride,
-kateri so v Sloveniji vse bolj popularni, predvsem v mestnih okrožjih. Njihovo število strmo narašča in lahko pričakujem,
-da bodo v prihodnjih 10 letih prevzeli vodilno mesto med avtomobili. 
+kateri so v Sloveniji vse bolj popularni, predvsem v mestnih okrožjih. Njihovo število strmo narašča in lahko pričakujemo, da bodo v prihodnjih 10 letih prevzeli vodilno mesto med avtomobili. 
 Prav tako se je v preteklih letih marsikdo odločil predelati svoj avtomobil na plin. 
-Sam menim, da je prihodnost v elektriki, saj je z dokončnim prebojem na trg avtomobilov, ta vrsta pogona že precej
-razširjena in vse bolj dostopna ter priljubljena med vozniki.
+Sam menim, da je prihodnost v elektriki, saj je z dokončnim prebojem na trg avtomobilov, ta vrsta pogona že precej razširjena in vse bolj dostopna ter priljubljena med vozniki.
 
 
 
@@ -144,7 +145,7 @@ zemljevid_placa
 ```
 
 
-Iz zemljevida opazim, da so najvišje plače v osrednji Sloveniji, kar je tudi pričakovano.
+Iz zemljevida opazimo, da so najvišje plače v osrednji Sloveniji, kar je tudi pričakovano.
 
 
 
@@ -153,8 +154,8 @@ zemljevid_starost
 ```
 
 
-Na zemljevidu opazim, da je povprečna starost avtomobila najnižja v osrednji Sloveniji. 
-To bi lahko razložil, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
+Na zemljevidu opazimo, da je povprečna starost avtomobila najnižja v osrednji Sloveniji. 
+To bi lahko razložili, s pomočjo zemljevida o bruto plačah. Zaradi višjih plač v osrednjem delu Slovenije,
 si lahko tamkajšnji prebivalci privoščijo tudi novejše avtomobile. 
 
 cor(starost2015$Starost_avtomobila, placa2015$Placa) = -0.5062193
@@ -174,7 +175,7 @@ source("analiza/analiza.r", encoding="UTF-8")
 graf_regresija_umrli
 ```
 
-Z regresijsko premico lahko ponazorim, da število smrti v prometu z leti upada. 
+Z regresijsko premico lahko ponazorimo, da število smrti v prometu z leti upada. 
 Možen razlog za to so boljši avtomobili, ki so tudi tehnološko bolj napredni.
 Opremljeni so z veliko varnostnimi sistemi, ki nam pomgajo v nevarnih situacijah v prometu in s tem preprečijo marsikatero nesrečo.
 
@@ -184,7 +185,7 @@ graf_regresija_avti
 
 
 
-Število osebnih avtomobilov skozi leta narašča. Razlog za to lahko iščem v miselnosti sedanje družbe, saj je avtomobil za marsikoga nujno prevozno sredstvo, po drugi strani pa tudi statusni simbol. 
+Število osebnih avtomobilov skozi leta narašča. Razlog za to lahko iščemo v miselnosti sedanje družbe, saj je avtomobil za marsikoga nujno prevozno sredstvo, po drugi strani pa tudi statusni simbol. 
 Avtomobil nam ponuja tudi svobodo gibanja, saj lahko potujemo kamor in kdaj želimo. 
 
 
@@ -192,7 +193,7 @@ Avtomobil nam ponuja tudi svobodo gibanja, saj lahko potujemo kamor in kdaj žel
 zemljevid_cluster_umrli 
 ```
 
-OPIS
+Zemljevid nam predstavlja regije, razvrščene glede na število umrlih v cestnoprometnih nesrečah med leti 2001 in 2017. Iz zemljevida lahko vidimo, da je najmanj nesreč v zasavski regiji, največ pa v primorsko-notranjski. 
 
 
 ***
