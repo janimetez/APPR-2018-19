@@ -26,6 +26,8 @@ source("lib/rstudio.r", encoding="UTF-8")
 
 
 ![](slike/images.png)
+***
+
 # Izbira teme
 
 V svoji projektni nalogi bom analiziral različne načine transporta tako ljudi kot tudi blaga v Sloveniji. 
