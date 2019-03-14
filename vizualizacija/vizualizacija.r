@@ -37,7 +37,7 @@ graf_umrli1 <- ggplot(data = filter(umrli, Regija == 'Pomurska' | Regija == 'Pod
 
 
 # stolpični diagram POVPREČNA STAROST OSEBNEGA AVTOMOBILA PO REGIJAH
-graf_starost <- ggplot(data = starost, mapping = aes(x=Regija, y=Starost_avtomobila, color=Leto)) +
+graf_starost <- ggplot(data = starost, mapping = aes(x=Regija, y=Starost_avtomobila, fill=factor(Leto))) +
   geom_bar(stat = 'identity', position = 'dodge') +
   labs(y = 'Starost avtomobila') +
   theme(axis.text.x = element_text(angle = 90, size = 8)) +
