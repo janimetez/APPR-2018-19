@@ -1,5 +1,5 @@
 ---
-title: "Poročilo pri predmetu Analiza podatkov s programom R"
+title: "Analiza transporta v Sloveniji"
 author: "Jani Metež"
 output:
   html_document: default
