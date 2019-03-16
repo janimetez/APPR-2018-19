@@ -14,10 +14,9 @@ library(munsell)
 graf_promet <- ggplot(data = promet, mapping = aes(x=Leto, y=Stevilo, group=Vrsta_prevoza, color=Vrsta_prevoza)) +
   geom_line(stat = "identity", position = position_dodge(width = NULL)) +
   theme(axis.text.x = element_text(angle = 90, size = 8)) +
-  labs(y='Potniki(1000)') +
+  labs(y='Potniki(1000)', color='Vrsta prevoza') +
   theme(legend.text = element_text(size=8)) + 
   ggtitle("Potniški prevoz in promet") 
-
 
 
 # točkasti graf ŠTEVILO UMRLIH V CESTNOPROMETNIH NESREČAH NA 10.000 PREBIVALCEV PO REGIJAH
@@ -51,7 +50,8 @@ graf_vrsta_pogona <- ggplot(data=indeksi, mapping = aes(x=Leto, y=Indeks, group=
   geom_line(stat = 'identity') +
   theme(axis.text.x = element_text(angle = 90, size = 8)) +
   theme(legend.text = element_text(size=8)) + 
-  ggtitle("Indeks števila avtomobilov glede na vrsto pogona")
+  ggtitle("Indeks števila avtomobilov glede na vrsto pogona") +
+  labs(color='Vrsta pogona')
 
 
 
