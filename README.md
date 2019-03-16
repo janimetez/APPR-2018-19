@@ -1,4 +1,4 @@
-# Analiza podatkov s programom R, 2018/19
+# Analiza transporta v Sloveniji 
 
 Avtor: Jani Metež
 
@@ -7,7 +7,7 @@ Repozitorij z gradivi pri predmetu APPR v študijskem letu 2018/19
 * [![Shiny](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/janimetez/APPR-2018-19/master?urlpath=shiny/APPR-2018-19/projekt.Rmd) Shiny
 * [![RStudio](http://mybinder.org/badge.svg)](http://beta.mybinder.org/v2/gh/janimetez/APPR-2018-19/master?urlpath=rstudio) RStudio
 
-## Analiza transporta v Sloveniji
+## Tematika in analize
 
 
 V svoji projektni nalogi bom analiziral različne načine transporta tako ljudi kot tudi blaga v Sloveniji. 
