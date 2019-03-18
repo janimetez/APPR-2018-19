@@ -37,7 +37,7 @@ V svoji projektni nalogi bom analiziral različne načine transporta tako ljudi 
 Raziskal bom s katero vrsto prevoza se ljudje največ prevažajo in kako se le-to spreminja skozi leta. Primerjal bom spremembo v količini cestnih vozil glede na regije v daljšem časovnem obdobju, hkrati pa me bo zanimalo tudi, kako narašča število osebnih avtomobilov na alternativne vire goriva v zadnjih letih. Prav tako bom poskušal poiskati povezavo med povprečno starostjo avtomobila in povprečno bruto plačo po regijah in pogledal kako se plače in povprečna starost spreminjata skozi daljši časovni razpon. 
 Zanimala me bo tudi primerjava števila umrlih v prometnih nesrečah preko različnih vrst transporta in preko različnih regij. S pomočjo analize podatkov bom poiskal povezave med številom potnikov in številom nesreč, glede na posamezne vrste transporta. 
 
-Glavni cilji moje analize bodo, da bi ugotovil, kako se različne vrste transporta, število umrlih, povprečno število avtomobilov in njihova povprečna starost spreminjajo skozi leta. Spremembe bom ponekod ponazoril tudi glede na slovenske regije. Hkrati bom trende spreminjanja poskušal razložiti s poenostavljeno razlago. 
+Glavni cilji moje analize bodo, da bi ugotovil, kako se različne vrste transporta, število umrlih, povprečno število avtomobilov in njihova povprečna starost spreminjajo skozi leta. Spremembe bom večinoma ponazoril tudi glede na slovenske regije. Hkrati bom trende spreminjanja poskušal razložiti s poenostavljeno razlago. 
 
 
 
@@ -196,6 +196,15 @@ Zemljevid nam predstavlja regije, razvrščene glede na število umrlih v cestno
 
 
 ***
+# Zaključek
+
+Pri izdelavi projektne naloge sem ugotovil precej novih dejstev o tansportu v Sloveniji. 
+Ugotovil sem, da smo Slovenci v preteklosti precej več uporabljali javni promet, vendar pa se ta delež v zadnjih letih ponovno dviguje. Zelo zanimivo se mi zdi, da povprečna starost osebnega avtomobila skozi celotno obdobje narašča. V povprečju ima že vsak drug Slovenec lasten avtomobil. Kljub vse večji uporabi transporta, število prometnih nesreč ne narašča in je v večini regij celo nižje kot v preteklosti. Za to je večinoma zaslužna nova tehnologija, s katero so avtomobili postali varnejši. 
+Prav tako sem potrdil svoje domneve o hitrem razvoju novih, alternativnih vrst pogona, pri čemer prevladuje električen in hibridni pogon. 
+Potrdil sem tudi hipotezo, da imajo ljudje z višjimi plačami novejše avtomobile. 
+Z regresijo sem skušal napovedati trende v prihodnosti. Trend večanja števila osebnih avtomobilov na prebivalca naj bi se še nadaljeval, prav tako pričakujem, da bodo prihodnji avtomobili še varnejši.
+Z vse večjo stopnjo avtonomne vožnje pa se bo verjetno število umrlih v cestnoprometnih nesrečah še zmanjšalo.
+
 
 ```{r shiny, echo=FALSE}
 shinyAppDir("shiny", options=list(width="100%", height=600))
